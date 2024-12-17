@@ -49,11 +49,18 @@ view: store_master {
   }
   dimension: latitude {
     type: number
+    label: "緯度"
     sql: ${TABLE}."Latitude" ;;
   }
   dimension: longitude {
     type: number
+    label: "経度"
     sql: ${TABLE}."Longitude" ;;
+  }
+  dimension: customer_location {
+    type: location
+    sql_latitude: ${TABLE}."Latitude" ;;
+    sql_longitude: ${TABLE}."Longitude" ;;
   }
   dimension: meat_department_area {
     type: number
